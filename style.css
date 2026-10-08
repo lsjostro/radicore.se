@@ -150,6 +150,39 @@ h1 { margin: 0; line-height: 0; }
 }
 .lang a:hover { color: var(--accent-ink); }
 .lang [aria-current] { background: var(--accent); color: #06231d; }
+/* 404 page */
+.notfound .home { display: inline-block; line-height: 0; }
+.notfound .code {
+  margin: 1.5rem 0 0;
+  font-family: "IBM Plex Mono", ui-monospace, monospace;
+  font-size: 4rem;
+  line-height: 1;
+  font-weight: 400;
+  letter-spacing: .08em;
+  color: var(--accent);
+}
+.notfound .tagline { margin-top: .75rem; }
+.notfound .actions {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: .75rem;
+  margin: 1.75rem 0 0;
+}
+.button, .button:visited {
+  display: inline-block;
+  padding: .6rem 1.2rem;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  background: var(--surface);
+  color: var(--ink);
+  font-weight: 500;
+  text-decoration: none;
+  -webkit-tap-highlight-color: transparent;
+  transition: border-color .15s, color .15s;
+}
+.button:hover, .button:focus-visible { border-color: var(--accent); color: var(--accent-ink); }
+
 footer {
   padding: 1.25rem;
   text-align: center;
@@ -170,6 +203,8 @@ footer {
   .hero { flex: 1 1 0; min-width: 0; }
   .contact { flex: 0 1 22rem; }
   .social { margin-top: 1.1rem; }
+  .notfound .code { margin-top: .75rem; font-size: 3rem; }
+  .notfound .actions { margin-top: 1.1rem; }
 }
 /* Very narrow phones: stack the email/phone labels above their values. */
 @media (max-width: 340px) {
