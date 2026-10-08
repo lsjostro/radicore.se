@@ -62,11 +62,12 @@ h1 { margin: 0; line-height: 0; }
 }
 .lede { margin: .4rem auto 0; max-width: 32rem; text-wrap: pretty; color: var(--muted); }
 .now { margin: .6rem 0 0; font-weight: 500; }
-.now a {
-  color: var(--accent-ink);
+.now a, .now a:visited, .now a:hover, .now a:active {
+  color: inherit;
   text-decoration: underline;
   text-decoration-color: var(--accent);
   text-underline-offset: 3px;
+  -webkit-tap-highlight-color: transparent;
 }
 .now a:hover { text-decoration-thickness: 2px; }
 .social {
