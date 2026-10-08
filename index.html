@@ -3,6 +3,16 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
+  <script>
+    (function () {
+      try {
+        var lang = (navigator.languages && navigator.languages[0]) || navigator.language || "";
+        var chosen = /(?:^|; )lang=/.test(document.cookie);
+        var fromSite = document.referrer.indexOf(location.origin + "/") === 0;
+        if (/^sv\b/i.test(lang) && !chosen && !fromSite) location.replace("/sv/");
+      } catch (e) {}
+    })();
+  </script>
   <title>Radicore AB · Continuous Delivery &amp; Open Source</title>
   <meta name="description" content="Radicore AB: experts in Continuous Delivery and Open Source software, based in Stockholm.">
   <meta name="theme-color" content="#f3f6f4" media="(prefers-color-scheme: light)">
@@ -116,6 +126,6 @@
   </main>
   <footer>© <span id="y">2026</span> Radicore AB</footer>
   <script>document.getElementById("y").textContent = new Date().getFullYear();</script>
-  <script>document.querySelectorAll(".lang a").forEach(a => a.addEventListener("click", () => { document.cookie = "nf_lang=" + a.hreflang + "; path=/; max-age=31536000; SameSite=Lax"; }));</script>
+  <script>document.querySelectorAll(".lang a").forEach(a => a.addEventListener("click", () => { document.cookie = "lang=" + a.hreflang + "; path=/; max-age=31536000; SameSite=Lax"; }));</script>
 </body>
 </html>

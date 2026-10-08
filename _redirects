@@ -1,4 +1,0 @@
-# Send visitors whose browser prefers Swedish to the Swedish page.
-# "!" forces the rule even though /index.html exists. Netlify's nf_lang
-# cookie (set by the EN/SV switcher) overrides the browser language.
-/  /sv/  302!  Language=sv
