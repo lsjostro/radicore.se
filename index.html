@@ -36,56 +36,70 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "@id": "https://radicore.se/#organization",
-    "name": "Radicore AB",
-    "alternateName": "Radicore",
-    "url": "https://radicore.se/",
-    "logo": "https://radicore.se/logo.png",
-    "image": "https://radicore.se/og-image.png",
-    "description": "Experts in Continuous Delivery and Open Source software.",
-    "email": "info@radicore.se",
-    "telephone": "+46703021502",
-    "taxID": "556861-5628",
-    "identifier": {
-      "@type": "PropertyValue",
-      "propertyID": "Organisationsnummer",
-      "value": "556861-5628"
-    },
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Hjortsbergsvägen 61A",
-      "postalCode": "129 38",
-      "addressLocality": "Hägersten",
-      "addressRegion": "Stockholm",
-      "addressCountry": "SE"
-    },
-    "knowsAbout": [
-      "Continuous Delivery",
-      "Continuous Integration",
-      "Open Source software",
-      "Platform engineering"
-    ],
-    "founder": {
-      "@type": "Person",
-      "name": "Lars Sjöström",
-      "sameAs": [
-        "https://se.linkedin.com/pub/lars-sj%C3%B6str%C3%B6m/2/9a0/586",
-        "https://github.com/lsjostro",
-        "https://twitter.com/latjon"
-      ],
-      "worksFor": [
-        {
-          "@id": "https://radicore.se/#organization"
+    "@graph": [
+      {
+        "@type": "ProfessionalService",
+        "@id": "https://radicore.se/#organization",
+        "name": "Radicore AB",
+        "alternateName": "Radicore",
+        "url": "https://radicore.se/",
+        "logo": "https://radicore.se/logo.png",
+        "image": "https://radicore.se/og-image.png",
+        "description": "Experts in Continuous Delivery and Open Source software.",
+        "email": "info@radicore.se",
+        "telephone": "+46703021502",
+        "taxID": "556861-5628",
+        "identifier": {
+          "@type": "PropertyValue",
+          "propertyID": "Organisationsnummer",
+          "value": "556861-5628"
         },
-        {
-          "@type": "Organization",
-          "@id": "https://patagia.se/#organization",
-          "name": "Patagia",
-          "url": "https://patagia.se/"
+        "address": {
+          "@type": "PostalAddress",
+          "streetAddress": "Hjortsbergsvägen 61A",
+          "postalCode": "129 38",
+          "addressLocality": "Hägersten",
+          "addressRegion": "Stockholm",
+          "addressCountry": "SE"
+        },
+        "knowsAbout": [
+          "Continuous Delivery",
+          "Continuous Integration",
+          "Open Source software",
+          "Platform engineering"
+        ],
+        "founder": {
+          "@id": "https://radicore.se/#lars"
         }
-      ]
-    }
+      },
+      {
+        "@type": "Person",
+        "@id": "https://radicore.se/#lars",
+        "name": "Lars Sjöström",
+        "sameAs": [
+          "https://se.linkedin.com/pub/lars-sj%C3%B6str%C3%B6m/2/9a0/586",
+          "https://github.com/lsjostro",
+          "https://twitter.com/latjon"
+        ],
+        "worksFor": [
+          {
+            "@id": "https://radicore.se/#organization"
+          },
+          {
+            "@id": "https://patagia.se/#organization"
+          }
+        ]
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://patagia.se/#organization",
+        "name": "Patagia",
+        "url": "https://patagia.se/",
+        "founder": {
+          "@id": "https://radicore.se/#lars"
+        }
+      }
+    ]
   }
   </script>
   <link rel="icon" href="/favicon.svg" type="image/svg+xml">
