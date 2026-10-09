@@ -62,14 +62,27 @@ h1 { margin: 0; line-height: 0; }
 }
 .lede { margin: .4rem auto 0; max-width: 32rem; text-wrap: pretty; color: var(--muted); }
 .now { margin: .6rem 0 0; font-weight: 500; }
-.now a, .now a:visited, .now a:hover, .now a:active {
+/* Text links: an accent underline that sweeps up into a soft highlight
+   behind the text on hover/focus. */
+.now a, .now a:visited, .now a:hover, .now a:active,
+.contact a, .contact a:visited {
   color: inherit;
-  text-decoration: underline;
-  text-decoration-color: var(--accent);
-  text-underline-offset: 3px;
+  text-decoration: none;
+  background-image: linear-gradient(color-mix(in srgb, var(--accent) 28%, transparent), color-mix(in srgb, var(--accent) 28%, transparent)),
+                    linear-gradient(var(--accent), var(--accent));
+  background-repeat: no-repeat;
+  background-position: 0 100%, 0 100%;
+  background-size: 100% 0, 100% 2px;
+  padding: 0 .1em;
+  margin: 0 -.1em;
+  border-radius: 2px;
+  -webkit-box-decoration-break: clone;
+  box-decoration-break: clone;
+  transition: background-size .25s ease;
   -webkit-tap-highlight-color: transparent;
 }
-.now a:hover { text-decoration-thickness: 2px; }
+.now a:hover, .now a:focus-visible,
+.contact a:hover, .contact a:focus-visible { background-size: 100% 100%, 100% 2px; }
 .social {
   display: flex;
   justify-content: center;
@@ -125,8 +138,6 @@ h1 { margin: 0; line-height: 0; }
 }
 .contact dt { color: var(--muted); }
 .contact dd { margin: 0; }
-.contact a { color: inherit; text-decoration-color: var(--accent); text-underline-offset: 3px; }
-.contact a:hover { color: var(--accent-ink); }
 .mono { font-family: "IBM Plex Mono", ui-monospace, monospace; font-size: .95em; }
 .lang {
   position: absolute;
@@ -213,6 +224,6 @@ footer {
   .contact dd + dt { margin-top: .35rem; }
 }
 @media (prefers-reduced-motion: reduce) {
-  .social a { transition: none; }
+  .social a, .now a, .contact a { transition: none; }
   .social a:hover { transform: none; }
 }
